@@ -18,7 +18,8 @@ FROM educations e
 JOIN users u ON u.id = e."userId"
 JOIN courses c ON e."courseId" = c.id
 JOIN schools s ON e."schoolId" = s.id
-WHERE e.status = 'finished';
+WHERE u.id = 30
+AND e.status = 'finished';
 
 --QUESTION 4 --
 
@@ -27,4 +28,5 @@ FROM experiences e
 JOIN users u ON e."userId" = u.id
 JOIN roles r ON e."roleId"  = r.id
 JOIN companies c ON e."companyId"  = c.id
-WHERE e."endDate"  IS NULL;
+WHERE u.id = 50
+AND e."endDate"  IS NULL;
